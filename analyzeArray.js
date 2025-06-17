@@ -1,6 +1,6 @@
-let sample = [1,8,3,4,2,6]
+let sample = []
 
-sample.reduce
+
 
 function mergeSort(array) {
     if (array.length <= 1) {
@@ -47,6 +47,8 @@ function merge(leftArray, rightArray) {
 
 function analyzeArray(array){
     const sortedArray = mergeSort(array);
+    if (sortedArray.length == 0){return "Array is empty"}
+    
     let result = {
         average: sortedArray.reduce((pre, next) => pre + next) / sortedArray.length,
         min: sortedArray[0],
@@ -58,3 +60,5 @@ function analyzeArray(array){
 }
 
 console.log(analyzeArray(sample))
+
+module.exports = analyzeArray;
